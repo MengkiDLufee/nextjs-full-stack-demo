@@ -14,7 +14,6 @@ export async function PATCH(
       return new NextResponse("Not found", { status: 404 });
     }
 
-    // update todo item whose id matched params.todoId
     const updatedTodo = await db.todo.update({
       where: {
         id: params.todoId,
@@ -24,12 +23,10 @@ export async function PATCH(
       },
     });
 
-    // Respond with the updated todo
     return NextResponse.json(updatedTodo, { status: 200 });
   } catch (error) {
     console.log("[UPDATE TODO]", error);
 
-    // Handle errors
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }

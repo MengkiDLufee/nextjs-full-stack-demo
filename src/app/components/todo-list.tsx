@@ -38,20 +38,20 @@ const TodoList = ({ handleEdit }: TodoListProps) => {
 
   // const todos = [
   //   {
-  //     title: "Drink Water",
+  //     title: "喝水",
   //     id: "1",
   //     isCompleted: false,
   //     updatedAt: new Date(),
   //   },
   //   {
-  //     title: "Have some rest",
+  //     title: "睡觉",
   //     id: "2",
   //     isCompleted: false,
   //     updatedAt: new Date(),
   //   },
   //   ,
   //   {
-  //     title: "Take a walk",
+  //     title: "散步",
   //     id: "3",
   //     isCompleted: true,
   //     updatedAt: new Date(),

@@ -7,23 +7,23 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   try {
 
-    // detsrtucture todoTitle from the incoming request
+    // 从请求中解构 todoTitle 
     const { todoTitle } = await req.json(); 
 
     if (!todoTitle) {
       return new NextResponse("Title required", { status: 400 });
     }
 
-    // Create and save todo on the database
+    // 在数据库中新建 todo
     const todo = await db.todo.create({
       data: {
         title: todoTitle,
       },
     });
 
-    return NextResponse.json(todo, { status: 200 }); // Respond with the created todo
+    return NextResponse.json(todo, { status: 200 });
   } catch (error) {
     console.log("[POST TODO]", error);
-    return new NextResponse("Internal Server Error", { status: 500 }); // Handle errors
+    return new NextResponse("Internal Server Error", { status: 500 });
   }
 }
